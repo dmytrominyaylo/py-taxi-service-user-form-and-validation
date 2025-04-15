@@ -3,11 +3,11 @@
 {% block content %}
   <h1>
     {{ car.model }}
-    <a href="" class="btn btn-danger link-to-page">
+    <a href="{% url 'taxi:car-delete' pk=car.pk %}" class="btn btn-danger link-to-page">
       Delete
     </a>
 
-    <a href="" class="btn btn-secondary link-to-page">
+    <a href="{% url 'taxi:car-update' pk=car.pk %}" class="btn btn-secondary link-to-page">
       Update
     </a>
   </h1>

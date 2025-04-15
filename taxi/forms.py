@@ -23,10 +23,10 @@ license_number_field = forms.CharField(
 class DriverCreationForm(UserCreationForm):
     license_number = license_number_field
 
-    class Meta(UserCreationForm.Meta):
-        model = Driver
-        fields = (UserCreationForm.Meta.fields
-                  + ("license_number", "first_name", "last_name", ))
+    class Meta:
+        model = get_user_model()
+        fields = ("username", "password1", "password2",
+                  "first_name", "last_name", "license_number")
 
 
 class DriverLicenseUpdateForm(forms.ModelForm):
