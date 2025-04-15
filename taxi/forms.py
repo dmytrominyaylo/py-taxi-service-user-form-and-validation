@@ -33,7 +33,7 @@ class DriverLicenseUpdateForm(forms.ModelForm):
     license_number = license_number_field
 
     class Meta:
-        model = Driver
+        model = get_user_model()
         fields = ("license_number", )
 
 
